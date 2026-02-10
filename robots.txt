@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow major AI/LLM crawlers (optional but recommended)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://hyperfusion.io/sitemap.xml

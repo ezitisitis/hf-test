@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "actions": [
+    {
+      "type": "link",
+      "url": "https://gonka-tracker.hyperfusion.io"
+    },
+    {
+      "type": "link",
+      "url": "https://stats.gonka.hyperfusion.io/dashboard"
+    },
+    {
+      "type": "link",
+      "url": "https://t.me/hyperfusion"
+    },
+    {
+      "type": "link",
+      "url": "https://t.me/hyperfusion_gonka_bot"
+    }
+  ]
+}

@@ -18,3 +18,18 @@ To use a custom domain, add your domain to the `CNAME` file and configure DNS.
 - Single-file React app (no build step)
 - React 18 via CDN
 - Zero dependencies beyond React/ReactDOM
+
+## LLM / AI Agent Optimisation
+
+These files were generated to make the single-page site (https://hyperfusion.io/) easier for LLMs and AI agents to discover and read.
+
+### Files
+- `index.content.json` — machine-readable extraction of key content from `index.html`
+- `.well-known/ai-plugin.json` — discovery manifest pointing to the HTML page and `index.content.json`
+- `robots.txt` — allows crawling and points to the sitemap
+- `sitemap.xml` — sitemap pointing (only) to `https://hyperfusion.io/`
+- `llms.txt` — quick pointers to the above resources
+
+### Deployment
+Place these files in your website root so they resolve as:
+- `https://hyperfusion.io/<file>`

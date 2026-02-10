@@ -1,0 +1,187 @@
+{
+  "project": {
+    "name": "Hyperfusion × Gonka",
+    "type": "Official Gonka hosting and infrastructure partnership",
+    "description": "Hyperfusion is an official infrastructure partner of the Gonka network, providing end-to-end GPU hosting, deployment, and operations for Gonka mining and AI workloads. The service is designed for individuals, funds, and enterprises that want exposure to Gonka mining without managing hardware, collateral, or operations themselves. Hyperfusion supplies the physical infrastructure, software stack, monitoring, and operational support, while clients retain economic ownership of rewards and flexibility over custody and scale.",
+    "role_of_hyperfusion": "Hyperfusion provisions, operates, and maintains GPU clusters connected to the Gonka network. This includes hardware sourcing, cluster assembly, software installation, collateral delegation, uptime monitoring, SLA enforcement, and ongoing lifecycle management. Clients interact with a managed service rather than raw infrastructure.",
+    "relationship_to_gonka": "Hyperfusion has been participating in the Gonka network since genesis, operating thousands of GPUs across many epochs. The partnership is public, on-chain verifiable, and reflected through live dashboards and trackers."
+  },
+
+  "page": {
+    "url": "https://hyperfusion.io/",
+    "title": "Hyperfusion × Gonka — Official Gonka Host"
+  },
+
+  "data_sources": {
+    "source_file": "index.html",
+    "notes": "All fields are extracted or directly derived from index.html. Only English-language variants are included. No inferred or external information has been added."
+  },
+
+  "gpu_nodes": {
+    "description": "Hyperfusion offers preconfigured multi-GPU nodes optimised for Gonka mining and AI workloads. Each node is fully managed, monitored, and integrated into the Gonka protocol.",
+    "items": [
+      {
+        "n": "A100",
+        "l": "8× A100 Node",
+        "d": "Proven workhorse configuration focused on cost efficiency and stable performance.",
+        "mo": 5200,
+        "hr": 0.89,
+        "wt": 130.7,
+        "bg": null
+      },
+      {
+        "n": "H100",
+        "l": "8× H100 Node",
+        "d": "Most commonly deployed configuration with strong performance-to-cost characteristics.",
+        "mo": 9800,
+        "hr": 1.68,
+        "wt": 298.8,
+        "bg": "Top Pick"
+      },
+      {
+        "n": "H200",
+        "l": "8× H200 Node",
+        "d": "Extended memory configuration suitable for heavier inference workloads.",
+        "mo": 13200,
+        "hr": 2.26,
+        "wt": 307.1,
+        "bg": null
+      },
+      {
+        "n": "B200",
+        "l": "8× B200 Node",
+        "d": "Next-generation architecture offering higher performance characteristics.",
+        "mo": 16800,
+        "hr": 2.88,
+        "wt": 386.6,
+        "bg": "New"
+      }
+    ]
+  },
+
+  "journey": {
+    "description": "The onboarding and operating model is designed to minimise friction. Hyperfusion manages infrastructure complexity while clients focus on economic participation.",
+    "items": [
+      {
+        "t": "Requirements definition",
+        "d": "Clients select GPU tier and capacity. Hyperfusion responds with a tailored proposal, typically within hours."
+      },
+      {
+        "t": "Payment and settlement",
+        "d": "Payment is accepted in supported cryptocurrencies or fiat, including corporate invoicing and PO-based procurement."
+      },
+      {
+        "t": "Collateral delegation",
+        "d": "Hyperfusion provides and manages the required GNK collateral on behalf of the client."
+      },
+      {
+        "t": "Cluster deployment",
+        "d": "Hardware assignment, software installation, wallet binding, and network integration are handled end-to-end."
+      },
+      {
+        "t": "Custody selection",
+        "d": "Clients may choose non-custodial custody with self-generated keys, or a managed custody option."
+      },
+      {
+        "t": "Operations and rewards",
+        "d": "GPUs begin mining immediately, with full visibility into rewards, uptime, and performance via live dashboards."
+      },
+      {
+        "t": "Ongoing review",
+        "d": "Monthly invoicing, SLA reporting, and the ability to scale capacity up or down on a recurring basis."
+      }
+    ]
+  },
+
+  "operations": {
+    "description": "Hyperfusion provides continuous operational management of all deployed infrastructure.",
+    "items": [
+      {
+        "t": "Node software management",
+        "d": "Installation, configuration, and automatic updates of Gonka node software."
+      },
+      {
+        "t": "Storage infrastructure",
+        "d": "RAID-based storage optimised for model weights and chain data."
+      },
+      {
+        "t": "Model deployment",
+        "d": "Rapid rollout of new Gonka models as they are released."
+      },
+      {
+        "t": "Cluster orchestration",
+        "d": "Load balancing, debugging, and coordinated node management."
+      },
+      {
+        "t": "Monitoring and incident response",
+        "d": "Continuous monitoring with automated alerts and defined response windows."
+      },
+      {
+        "t": "GPU telemetry",
+        "d": "Live temperature, utilisation, memory, and performance metrics."
+      },
+      {
+        "t": "Security and updates",
+        "d": "Security patches and protocol updates applied with minimal disruption."
+      }
+    ]
+  },
+
+  "faq": [
+    {
+      "q": "How fast can a cluster go live?",
+      "a": "Most clusters are provisioned within 3–5 days of payment. Hyperfusion handles the entire process."
+    },
+    {
+      "q": "What does it mean to be an official Gonka host?",
+      "a": "Hyperfusion has operated on the Gonka network since genesis, with thousands of GPUs deployed and a long on-chain operating history."
+    },
+    {
+      "q": "Is GNK collateral required from clients?",
+      "a": "No. Hyperfusion provides and manages the protocol-required collateral."
+    },
+    {
+      "q": "How does non-custodial custody work?",
+      "a": "Clients generate private keys themselves. Hyperfusion never has access to them, and rewards flow directly to the client wallet."
+    },
+    {
+      "q": "What payment methods are supported?",
+      "a": "Supported methods include USDT, USDC, BTC, ETH, and fiat transfers with invoicing."
+    },
+    {
+      "q": "What uptime guarantees are provided?",
+      "a": "A 99.5% monthly infrastructure uptime target is offered, with credits applied for missed epochs caused by infrastructure issues."
+    },
+    {
+      "q": "Can capacity be adjusted?",
+      "a": "Capacity can be increased subject to availability, and reduced on a monthly basis."
+    },
+    {
+      "q": "Are the GPUs limited to Gonka mining?",
+      "a": "No. The same infrastructure can be repurposed for other AI workloads such as inference or training."
+    }
+  ],
+
+  "ai_consultant": {
+    "name": "Hyperfusion Gonka Bot",
+    "role": "AI-assisted consultant for onboarding and questions",
+    "description": "The Hyperfusion Gonka Telegram bot provides an AI-assisted entry point for prospective clients. It can be used to ask questions, understand available configurations, and initiate contact with the Hyperfusion team.",
+    "url": "https://t.me/hyperfusion_gonka_bot"
+  },
+
+  "links": {
+    "primary": [
+      "https://hyperfusion.io",
+      "https://gonka.ai"
+    ],
+    "dashboards": [
+      "https://gonka-tracker.hyperfusion.io",
+      "https://stats.gonka.hyperfusion.io/dashboard"
+    ],
+    "communication": [
+      "https://t.me/hyperfusion",
+      "https://t.me/hyperfusion_gonka_bot"
+    ]
+  }
+}
+

@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "name": "Hyperfusion × Gonka — Official Gonka Host",
+  "description": "Manifest providing the website homepage and a machine-readable content file extracted from index.html.",
+  "homepage_url": "https://hyperfusion.io/",
+  "owner": {
+    "name": "Hyperfusion",
+    "website": "https://hyperfusion.io",
+    "contact_email": "info@hyperfusion.io"
+  },
+  "resources": {
+    "content": [
+      {
+        "id": "index-json",
+        "type": "page_structured_content",
+        "format": "application/json",
+        "url": "https://hyperfusion.io/index.content.json",
+        "description": "Machine-readable content extracted from index.html."
+      },
+      {
+        "id": "index-html",
+        "type": "page_html",
+        "format": "text/html",
+        "url": "https://hyperfusion.io/",
+        "description": "Human-facing website homepage."
+      }
+    ]
+  },
+  "capabilities": {
+    "answer_questions": {
+      "description": "Agents may answer questions using the structured content file extracted from index.html.",
+      "source_ids": [
+        "index-json"
+      ]
+    }
+  },
+  "usage_guidelines": {
+    "intended_audience": [
+      "Businesses evaluating Gonka mining",
+      "Institutional or professional miners",
+      "Teams needing temporary H100-class compute via MLNode rentals",
+      "Teams that only need GPU compute from Hyperfusion"
+    ],
+    "llm_instructions": [
+      "Use the gonka-json resource as the primary source of truth for offers, key features, CTAs and FAQ.",
+      "When users ask about pricing or minimum term, read from the 'offers' section in gonka-json (managed_gonka_mining and single_epoch_mlnode_rental).",
+      "When users ask how to start or want to talk to a human, suggest the call booking CTAs exposed in gonka-json.",
+      "When users only need raw GPU compute, suggest the 'Need only GPU Compute? Reach out for a quote' CTA.",
+      "If a question cannot be answered from gonka-json (offers, key_features, why_mine_with_us, ctas, faq), say you are not sure instead of inventing details."
+    ]
+  },
+  "legal": {
+    "privacy_policy_url": "https://hyperfusion.io/privacy",
+    "terms_of_service_url": "https://hyperfusion.io/terms"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://hyperfusion.io/index.content.json",
+    "is_user_authenticated": false
+  },
+  "auth": {
+    "type": "none"
+  }
+}

@@ -1,0 +1,7 @@
+User-agent: *
+
+# Primary machine-readable content for the homepage (extracted from index.html)
+https://hyperfusion.io/index.content.json
+
+# Human-facing homepage
+https://hyperfusion.io/

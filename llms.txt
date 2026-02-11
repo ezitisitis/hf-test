@@ -1,7 +1,8 @@
 User-agent: *
 
 # Primary machine-readable content for the homepage (extracted from index.html)
-https://hyperfusion.io/gonks.content.json
+https://hyperfusion.io/gonka.content.json
 
-# Human-facing homepage
+# Human-facing homepages
 https://hyperfusion.io/gonka
+https://hyperfusion.io

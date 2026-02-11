@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "name": "Hyperfusion × Gonka — Official Gonka Host",
   "description": "Manifest providing the website homepage and a machine-readable content file extracted from index.html.",
-  "homepage_url": "https://hyperfusion.io/",
+  "homepage_url": "https://hyperfusion.io/gonka",
   "owner": {
     "name": "Hyperfusion",
-    "website": "https://hyperfusion.io",
+    "website": "https://hyperfusion.io/gonka",
     "contact_email": "info@hyperfusion.io"
   },
   "resources": {
@@ -14,14 +14,14 @@
         "id": "index-json",
         "type": "page_structured_content",
         "format": "application/json",
-        "url": "https://hyperfusion.io/index.content.json",
+        "url": "https://hyperfusion.io/gonka.content.json",
         "description": "Machine-readable content extracted from index.html."
       },
       {
         "id": "index-html",
         "type": "page_html",
         "format": "text/html",
-        "url": "https://hyperfusion.io/",
+        "url": "https://hyperfusion.io/gonka",
         "description": "Human-facing website homepage."
       }
     ]
@@ -55,7 +55,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://hyperfusion.io/index.content.json",
+    "url": "https://hyperfusion.io/gonka.content.json",
     "is_user_authenticated": false
   },
   "auth": {

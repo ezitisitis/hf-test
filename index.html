@@ -16,6 +16,7 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 <div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.9/babel.min.js"></script>
@@ -144,6 +145,18 @@ function Ttl(p){return React.createElement("h2",{style:{fontSize:"clamp(32px,4vw
 function Sub(p){return React.createElement("p",{style:{fontSize:16,color:B.t2,lineHeight:1.7,maxWidth:600,marginBottom:48,fontWeight:400}},p.children);}
 function an(v,i,dir){return{opacity:v?1:0,transform:v?"translate(0)":"translate"+(dir||"Y")+"("+(dir==="X"?"-30":"30")+"px)",transition:"all .7s cubic-bezier(.16,1,.3,1) "+(i||0)*0.1+"s"};}
 
+function badge(text, colorName = 'pink'){
+    if (colorName === 'pink') {
+        var color = "#F726FF"
+    }
+
+    if (colorName === 'cyan') {
+        var color = "#02F7FE"
+    }
+
+    return React.createElement("span",{className: "absolute", style:{top:12,right:12,fontSize:11,color:color,border:"1px solid "+color,borderRadius:10,padding:"2px 8px",fontWeight:600}},text)
+}
+
 function App(){
   var ch=useLiveChain();
   var _sc=useState(false),scrolled=_sc[0],setSc=_sc[1];
@@ -247,10 +260,10 @@ function App(){
       )
     ),
 
+    React.createElement("div",{style:{position:"absolute",top:"-20%",left:"-10%",width:600,height:600,background:"radial-gradient(circle,rgba(247,38,255,0.06) 0%,transparent 70%)",pointerEvents:"none"}}),
+    React.createElement("div",{style:{position:"absolute",bottom:"-10%",right:"-10%",width:500,height:500,background:"radial-gradient(circle,rgba(2,247,254,0.04) 0%,transparent 70%)",pointerEvents:"none"}}),
     // HERO
     React.createElement("section",{ref:hRef,style:{position:"relative",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",padding:"120px 24px 80px",maxWidth:1200,margin:"0 auto",overflow:"hidden"}},
-      React.createElement("div",{style:{position:"absolute",top:"-20%",left:"-10%",width:600,height:600,background:"radial-gradient(circle,rgba(247,38,255,0.06) 0%,transparent 70%)",pointerEvents:"none"}}),
-      React.createElement("div",{style:{position:"absolute",bottom:"-10%",right:"-10%",width:500,height:500,background:"radial-gradient(circle,rgba(2,247,254,0.04) 0%,transparent 70%)",pointerEvents:"none"}}),
       React.createElement("div",{style:{position:"absolute",inset:0,backgroundImage:"radial-gradient(rgba(2,247,254,0.04) 1px,transparent 1px)",backgroundSize:"32px 32px",animation:"gridShimmer 8s infinite",pointerEvents:"none"}}),
       React.createElement("div",{style:{width:"100%",position:"relative",zIndex:1,textAlign:"center",opacity:hV?1:0,transform:hV?"translateY(0)":"translateY(40px)",transition:"all 1s cubic-bezier(.16,1,.3,1)"}},
         React.createElement("div",{style:{display:"inline-flex",alignItems:"center",gap:8,color:B.mg,border:"1px solid "+B.bm,borderRadius:20,padding:"8px 18px",marginBottom:24,fontWeight:500}},li===0?"\u2605 Official Gonka Network Host":li===1?"\u2605 Gonka\u7F51\u7EDC\u5B98\u65B9\u4E3B\u673A":"\u2605 \u041E\u0444\u0438\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0439 \u0445\u043E\u0441\u0442 \u0441\u0435\u0442\u0438 Gonka"),
@@ -333,7 +346,7 @@ function App(){
             {ic:"\u25CB",ti:"Гарантия по эпохам",de:"\u041F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043D\u044B\u0435 \u044D\u043F\u043E\u0445\u0438 \u043A\u043E\u043C\u043F\u0435\u043D\u0441\u0438\u0440\u0443\u044E\u0442\u0441\u044F. Публикация данных аптайма и ежемесячных SLA-отчетов.",tg:null},
             {ic:"\u27D0",ti:"\u041F\u043E\u043B\u043D\u044B\u0439 \u0446\u0438\u043A\u043B \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0439",de:"ПО, мониторинг и обновления. Панели мониторинга. Персональный менеджер при размещении от 10 узлов.",tg:"\u041E\u043F\u0446\u0438\u044F"}
           ]).map(function(c,i){return React.createElement("div",{key:i,style:Object.assign({background:B.cd,border:"1px solid "+B.bd,borderRadius:14,padding:24,position:"relative"},an(oV,i))},
-            c.tg&&React.createElement("span",{style:{position:"absolute",top:12,right:12,fontSize:11,color:B.mg,border:"1px solid "+B.bm,borderRadius:10,padding:"2px 8px",fontWeight:600}},c.tg),
+            c.tg&&badge(c.tg),
             React.createElement("span",{style:{fontSize:22,color:B.cy,display:"block",marginBottom:14}},c.ic),
             React.createElement("h3",{style:{fontSize:16,fontWeight:500,marginBottom:8}},c.ti),
             React.createElement("p",{style:{color:B.t2,lineHeight:1.55}},c.de)
@@ -443,7 +456,7 @@ function App(){
         React.createElement(Sub,null,li===0?"Collateral included. Month-to-month. No setup fees. Crypto and fiat accepted. What you see is what you pay.":li===1?"\u542B\u62B5\u62BC\u54C1\u3002\u6708\u4ED8\u3002\u65E0\u8BBE\u7F6E\u8D39\u3002\u63A5\u53D7\u52A0\u5BC6\u8D27\u5E01\u548C\u6CD5\u5E01\u3002\u6240\u89C1\u5373\u6240\u4ED8\u3002":"Залог включен в стоимость. Ежемесячная модель оплаты. Поддерживаются криптовалюта и фиат."),
         React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fit, minmax(220px, 1fr))",gap:16}},
           GPU.map(function(g,i){var best=g.bg==="Top Pick";return React.createElement("div",{key:g.n,style:Object.assign({background:B.cd,border:"1px solid "+(best?B.mg+"44":B.bd),borderRadius:14,padding:24,position:"relative",display:"flex",flexDirection:"column"},best?{boxShadow:"0 0 40px rgba(247,38,255,0.08)"}:{},an(prV,i))},
-            g.bg&&React.createElement("span",{style:Object.assign({position:"absolute",top:12,right:12,fontSize:11,borderRadius:10},best?{color:"#fff",background:B.mg,padding:"3px 10px",fontWeight:600}:{color:B.cy,border:"1px solid "+B.bc,padding:"2px 8px",fontWeight:600})},t(g.bg)),
+            g.bg&&badge(t(g.bg), best ? 'pink' : 'cyan'),
             React.createElement("div",{style:{fontSize:16,fontWeight:500,marginBottom:4,display:"flex",alignItems:"center",gap:8}},
               React.createElement("span",{style:{width:6,height:6,borderRadius:"50%",background:best?B.mg:"rgba(255,255,255,0.2)"}}),g.l
             ),

@@ -6,7 +6,7 @@
 <title>Hyperfusion × Gonka — Official Gonka Host</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;}
 html{scroll-behavior:smooth}
 body{background:#0F0F23;font-family:'Outfit',system-ui,sans-serif;color:#F0F0F0;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
@@ -145,7 +145,7 @@ function Ttl(p){return React.createElement("h2",{style:{fontSize:"clamp(32px,4vw
 function Sub(p){return React.createElement("p",{style:{fontSize:16,color:B.t2,lineHeight:1.7,maxWidth:600,marginBottom:48,fontWeight:400}},p.children);}
 function an(v,i,dir){return{opacity:v?1:0,transform:v?"translate(0)":"translate"+(dir||"Y")+"("+(dir==="X"?"-30":"30")+"px)",transition:"all .7s cubic-bezier(.16,1,.3,1) "+(i||0)*0.1+"s"};}
 
-function badge(text, colorName = 'pink'){
+function badge(text, colorName = 'pink', top = 12, right = 12){
     if (colorName === 'pink') {
         var color = "#F726FF"
     }
@@ -154,7 +154,7 @@ function badge(text, colorName = 'pink'){
         var color = "#02F7FE"
     }
 
-    return React.createElement("span",{className: "absolute", style:{top:12,right:12,fontSize:11,color:color,border:"1px solid "+color,borderRadius:10,padding:"2px 8px",fontWeight:600}},text)
+    return React.createElement("span",{className: "absolute", style:{top:top,right:right,fontSize:11,color:color,border:"1px solid "+color,borderRadius:10,padding:"2px 8px",fontWeight:600}},text)
 }
 
 function App(){
@@ -223,7 +223,7 @@ function App(){
   };
   function t(k){return TX[k]?TX[k][li]:k;}
 
-  return React.createElement("div",{style:{background:"linear-gradient(180deg,"+B.bgDeep+" 0%,"+B.bgMid+" 40%,"+B.bgLight+" 70%,"+B.bgMid+" 90%,"+B.bgDeep+" 100%)",minHeight:"100vh"}},
+  return React.createElement("div",{className: "relative", style:{background:"linear-gradient(180deg,"+B.bgDeep+" 0%,"+B.bgMid+" 40%,"+B.bgLight+" 70%,"+B.bgMid+" 90%,"+B.bgDeep+" 100%)",minHeight:"100vh"}},
 
     // TICKER
     React.createElement("div",{style:{position:"fixed",top:0,left:0,right:0,zIndex:1000,background:"rgba(15,15,35,0.92)",borderBottom:"1px solid "+B.bd,backdropFilter:"blur(16px)"}},
@@ -260,8 +260,8 @@ function App(){
       )
     ),
 
-    React.createElement("div",{style:{position:"absolute",top:"-20%",left:"-10%",width:600,height:600,background:"radial-gradient(circle,rgba(247,38,255,0.06) 0%,transparent 70%)",pointerEvents:"none"}}),
-    React.createElement("div",{style:{position:"absolute",bottom:"-10%",right:"-10%",width:500,height:500,background:"radial-gradient(circle,rgba(2,247,254,0.04) 0%,transparent 70%)",pointerEvents:"none"}}),
+    React.createElement("div",{style:{position:"absolute",left:"-10%",width:600,height:600,background:"radial-gradient(circle,rgba(247,38,255,0.06) 0%,transparent 70%)",pointerEvents:"none"}}),
+    React.createElement("div",{style:{position:"absolute",top:"70vh",right:"-10%",width:500,height:500,background:"radial-gradient(circle,rgba(2,247,254,0.04) 0%,transparent 70%)",pointerEvents:"none"}}),
     // HERO
     React.createElement("section",{ref:hRef,style:{position:"relative",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",padding:"120px 24px 80px",maxWidth:1200,margin:"0 auto",overflow:"hidden"}},
       React.createElement("div",{style:{position:"absolute",inset:0,backgroundImage:"radial-gradient(rgba(2,247,254,0.04) 1px,transparent 1px)",backgroundSize:"32px 32px",animation:"gridShimmer 8s infinite",pointerEvents:"none"}}),
@@ -520,13 +520,13 @@ function App(){
           React.createElement("span",{style:{color:B.t3}},li===0?"Based on live Gonka network data":li===1?"\u57FA\u4E8EGonka\u7F51\u7EDC\u5B9E\u65F6\u6570\u636E":"\u041D\u0430 \u043E\u0441\u043D\u043E\u0432\u0435 \u0434\u0430\u043D\u043D\u044B\u0445 \u0441\u0435\u0442\u0438 Gonka \u0432 \u0440\u0435\u0430\u043B\u044C\u043D\u043E\u043C \u0432\u0440\u0435\u043C\u0435\u043D\u0438")
         ),
         React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:16}},
-          sorted.map(function(g,i){return React.createElement("div",{key:g.n,style:Object.assign({background:B.cd,border:"1px solid "+(i===0?B.bc:B.bd),borderRadius:12,padding:"16px 20px",position:"relative"},an(efV,i,"X"))},
-            i===0&&React.createElement("span",{style:{position:"absolute",top:8,right:12,fontSize:11,color:"#fff",background:B.mg,borderRadius:10,padding:"2px 10px",fontWeight:600}},t("Highest ROI")),
+          sorted.map(function(g,i){return React.createElement("div",{key:g.n,className:"px-6 py-7",style:Object.assign({background:B.cd,border:"1px solid "+(i===0?B.bc:B.bd),borderRadius:12,position:"relative"},an(efV,i,"X"))},
+            i===0&&badge(t("Highest ROI"), 'pink', 12, 24),
             React.createElement("div",{style:{display:"flex",alignItems:"baseline",gap:12,marginBottom:8}},
               React.createElement("span",{style:{fontSize:18,fontWeight:500}},g.n),
               React.createElement("span",{style:{color:B.t2}},"$"+g.hr.toFixed(2)+"/GPU/hr"),
               React.createElement("span",{style:{flex:1}}),
-              React.createElement("span",{style:{fontSize:28,fontWeight:500,color:B.cy}},g.eff)
+              React.createElement("span",{style:{fontSize:24,fontWeight:500,color:B.cy}},g.eff)
             ),
             React.createElement("div",{style:{height:6,background:"rgba(255,255,255,0.04)",borderRadius:3,overflow:"hidden",marginBottom:6}},
               React.createElement("div",{style:{height:"100%",borderRadius:3,width:efV?(parseFloat(g.eff)/mx*100)+"%":"0%",background:i===0?"linear-gradient(90deg,"+B.mg+","+B.cy+")":B.bc,transition:"width 1.2s cubic-bezier(.16,1,.3,1) "+(0.5+i*0.15)+"s"}})
@@ -534,7 +534,7 @@ function App(){
             React.createElement("div",{style:{color:B.t2}},t("Network weight:")+g.wt)
           );})
         ),
-        React.createElement("p",{style:{fontSize:11,color:B.t3,textAlign:"center",marginTop:20}},li===0?"Network weights fluctuate. ":li===1?"\u7F51\u7EDC\u6743\u91CD\u4F1A\u6CE2\u52A8\u3002":"Сетевые веса изменяются со временем. ",React.createElement("a",{href:"https://stats.gonka.hyperfusion.io/dashboard",target:"_blank",rel:"noopener",style:{color:B.cy}},t("View live data \u2192")))
+        React.createElement("p",{style:{color:B.t3,textAlign:"center",marginTop:20}},li===0?"Network weights fluctuate. ":li===1?"\u7F51\u7EDC\u6743\u91CD\u4F1A\u6CE2\u52A8\u3002":"Сетевые веса изменяются со временем. ",React.createElement("a",{href:"https://stats.gonka.hyperfusion.io/dashboard",target:"_blank",rel:"noopener",style:{color:B.cy}},t("View live data \u2192")))
       )
     ),
 

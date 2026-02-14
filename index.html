@@ -529,30 +529,83 @@
     }
 
     function useLiveChain() {
-        var s = useState({block: 2561340, age: 0, epoch: 170, timer: "05:42:18"});
-        var d = s[0], set = s[1];
-        useEffect(function () {
-            var iv = setInterval(function () {
-                set(function (p) {
-                    var a = (p.age + 1) % 15;
-                    var b = a === 0 ? p.block + 1 : p.block;
-                    var pts = p.timer.split(":");
-                    var h = +pts[0], m = +pts[1], sc = +pts[2];
-                    var t = h * 3600 + m * 60 + sc - 1;
-                    if (t < 0) t = 21599;
+        const [state, setState] = React.useState({
+            block: 0,
+            age: 0,
+            epoch: 0,
+            secondsRemaining: 0,
+            timer: "00:00:00",
+            avgBlockTime: 5
+        });
+
+        // 🔹 Fetch live chain data
+        React.useEffect(() => {
+            async function load() {
+                try {
+                    const response = await fetch("http://localhost:3000/api/v1/inference/current");
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+
+                    setState(prev => {
+                        const blocksRemaining =
+                            data.next_poc_start_block - data.current_block_height;
+
+                        const secondsRemaining =
+                            Math.max(0, Math.floor(blocksRemaining * data.avg_block_time));
+
+                        return {
+                            ...prev,
+                            block: data.current_block_height,
+                            epoch: data.epoch_id,
+                            age: 0,
+                            avgBlockTime: data.avg_block_time,
+                            blocksRemaining,
+                            secondsRemaining
+                        };
+                    });
+
+                } catch (err) {
+                    console.error("Fetch error:", err);
+                }
+            }
+
+            load();
+        }, []);
+
+        React.useEffect(() => {
+            const iv = setInterval(() => {
+                setState(prev => {
+                    const newSeconds = Math.max(0, prev.secondsRemaining - 1);
+
                     return {
-                        block: b,
-                        age: a,
-                        epoch: p.epoch,
-                        timer: String(Math.floor(t / 3600)).padStart(2, "0") + ":" + String(Math.floor((t % 3600) / 60)).padStart(2, "0") + ":" + String(t % 60).padStart(2, "0")
+                        ...prev,
+                        secondsRemaining: newSeconds,
+                        timer: formatTimer(newSeconds)
                     };
                 });
             }, 1000);
-            return function () {
-                clearInterval(iv);
-            };
+
+            return () => clearInterval(iv);
         }, []);
-        return d;
+
+        return state;
+    }
+
+    // Helper
+    function formatTimer(seconds) {
+        const h = Math.floor(seconds / 3600);
+        const m = Math.floor((seconds % 3600) / 60);
+        const s = seconds % 60;
+
+        return (
+            String(h).padStart(2, "0") + ":" +
+            String(m).padStart(2, "0") + ":" +
+            String(s).padStart(2, "0")
+        );
     }
 
     function Tag(p) {

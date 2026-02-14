@@ -71,30 +71,30 @@
 
     const GPU_ALL = [[
         {
-            n: "A100",
-            l: "8\u00D7 A100 Node",
+            n: "H200 SXM",
+            l: "8\u00D7 H200 SXM Node",
             d: "Proven workhorse for cost-efficient mining",
             mo: 5200,
-            hr: 0.89,
-            wt: 130.7,
+            hr: 2.70,
+            wt: 294.76,
             bg: null
         },
         {
-            n: "H100",
-            l: "8\u00D7 H100 Node",
+            n: "H100 SXM",
+            l: "8\u00D7 H100 SXM Node",
             d: "Our most deployed config, highest ROI per dollar",
             mo: 9800,
-            hr: 1.68,
-            wt: 298.8,
+            hr: 2.16,
+            wt: 283.24,
             bg: "Top Pick"
         },
         {
-            n: "H200",
-            l: "8\u00D7 H200 Node",
+            n: "H100 PCIe",
+            l: "8\u00D7 H100 PCIe Node",
             d: "Extended memory for heavyweight inference models",
             mo: 13200,
-            hr: 2.26,
-            wt: 307.1,
+            hr: 2.16,
+            wt: 140.19,
             bg: null
         },
         {
@@ -102,36 +102,44 @@
             l: "8\u00D7 B200 Node",
             d: "Blackwell architecture, next-gen performance",
             mo: 16800,
-            hr: 2.88,
+            hr: 3.40,
+            wt: 386.6,
+            bg: "New"
+        },
+        {
+            n: "A100",
+            l: "8\u00D7 A100 Node",
+            mo: 16800,
+            hr: 0.99,
             wt: 386.6,
             bg: "New"
         }
     ], [
         {
-            n: "A100",
-            l: "8\u00D7 A100\u8282\u70B9",
+            n: "H200 SXM",
+            l: "8\u00D7 H200 SXM\u8282\u70B9",
             d: "\u4E13\u4E3A\u6210\u672C\u6548\u76CA\u6316\u77FF\u7684\u53EF\u9760\u4E3B\u529B",
             mo: 5200,
-            hr: 0.89,
-            wt: 130.7,
+            hr: 2.70,
+            wt: 294.76,
             bg: null
         },
         {
-            n: "H100",
-            l: "8\u00D7 H100\u8282\u70B9",
+            n: "H100 SXM",
+            l: "8\u00D7 H100 SXM\u8282\u70B9",
             d: "\u6211\u4EEC\u90E8\u7F72\u6700\u591A\u7684\u914D\u7F6E\uFF0C\u6BCF\u7F8E\u5143\u6700\u9AD8ROI",
             mo: 9800,
-            hr: 1.68,
-            wt: 298.8,
+            hr: 2.16,
+            wt: 283.24,
             bg: "Top Pick"
         },
         {
-            n: "H200",
-            l: "8\u00D7 H200\u8282\u70B9",
+            n: "H100 PCIe",
+            l: "8\u00D7 H100 PCIe\u8282\u70B9",
             d: "\u6269\u5C55\u5185\u5B58\uFF0C\u7528\u4E8E\u91CD\u91CF\u7EA7\u63A8\u7406\u6A21\u578B",
             mo: 13200,
-            hr: 2.26,
-            wt: 307.1,
+            hr: 2.16,
+            wt: 140.19,
             bg: null
         },
         {
@@ -139,36 +147,44 @@
             l: "8\u00D7 B200\u8282\u70B9",
             d: "Blackwell\u67B6\u6784\uFF0C\u4E0B\u4E00\u4EE3\u6027\u80FD",
             mo: 16800,
-            hr: 2.88,
+            hr: 3.40,
+            wt: 386.6,
+            bg: "New"
+        },
+        {
+            n: "A100",
+            l: "8\u00D7 A100\u8282\u70B9",
+            mo: 16800,
+            hr: 0.99,
             wt: 386.6,
             bg: "New"
         }
     ], [
         {
-            n: "A100",
-            l: "8× A100 узлов",
+            n: "H200 SXM",
+            l: "8× H200 SXM узлов",
             d: "Надежный вариант для эффективного майнинга",
             mo: 5200,
-            hr: 0.89,
-            wt: 130.7,
+            hr: 2.70,
+            wt: 294.76,
             bg: null
         },
         {
-            n: "H100",
-            l: "8× H100 узлов",
+            n: "H100 SXM",
+            l: "8× H100 SXM узлов",
             d: "Самая популярная конфигурация, макс. ROI на единицу вложений",
             mo: 9800,
-            hr: 1.68,
-            wt: 298.8,
+            hr: 2.16,
+            wt: 283.24,
             bg: "Top Pick"
         },
         {
-            n: "H200",
-            l: "8× H200 узлов",
+            n: "H100 PCIe",
+            l: "8× H100 PCIe узлов",
             d: "Увеличенный объем памяти для тяжелых моделей",
             mo: 13200,
-            hr: 2.26,
-            wt: 307.1,
+            hr: 2.16,
+            wt: 140.19,
             bg: null
         },
         {
@@ -176,7 +192,15 @@
             l: "8× B200 узлов",
             d: "Архитектура Blackwell, новый уровень производительности",
             mo: 16800,
-            hr: 2.88,
+            hr: 3.40,
+            wt: 386.6,
+            bg: "New"
+        },
+        {
+            n: "A100",
+            l: "8× A100 узлов",
+            mo: 16800,
+            hr: 0.99,
             wt: 386.6,
             bg: "New"
         }
